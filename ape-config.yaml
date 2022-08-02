@@ -1,0 +1,17 @@
+name: apeworx-starter-kit
+contracts_folder: contracts
+deployments:
+  ethereum:
+    rinkeby:
+      - contract_type: AggregatorV3Interface
+        address: "0x8A753747A1Fa494EC906cE90E9f37563A8AF630e"
+      - contract_type: VRFCoordinatorV2
+        address: "0x6168499c0cFfCaCD319c818142124B7A15E857ab"
+      - contract_type: LinkToken
+        address: "0x01be23585060835e02b77ef475b0cc51aa1e0709"
+default_ecosystem: ethereum
+foundry:
+  fork:
+    ethereum:
+      mainnet:
+        upstream_provider: alchemy
