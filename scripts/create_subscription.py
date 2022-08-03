@@ -29,6 +29,8 @@ def create_subscription():
 
 def fund_subscription(subscription_id=1):
     print("Funding subscription...")
+    ecosystem = networks.active_provider.network.ecosystem.name
+    chain_name = networks.active_provider.network.name
     account = get_account()
     fund_amount = network_config[ecosystem][chain_name].get("fund_amount", False)
     link_token = get_or_deploy_contract("LinkToken")

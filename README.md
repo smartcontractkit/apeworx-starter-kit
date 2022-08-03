@@ -30,6 +30,9 @@ It shows how to use the these frameworks and languages as well as the following 
     - [Deploy to a local or adhoc network](#deploy-to-a-local-or-adhoc-network)
     - [Deploy to a mainnet or test network](#deploy-to-a-mainnet-or-test-network)
     - [Interacting with Contracts](#interacting-with-contracts)
+      - [Price Feed Consumer](#price-feed-consumer-1)
+      - [VRF Consumer](#vrf-consumer)
+      - [Keeper Consumer](#keeper-consumer)
 - [Miscellaneous](#miscellaneous)
   - [Contributing](#contributing)
   - [Resources](#resources)
@@ -188,6 +191,77 @@ To interact with contracts, we recommend using the console.
 ```
 ape console --network ethereum:rinkeby:alchemy
 ```
+
+Or, you can follow along and run the scripts to see the end-to-end functionaltiy.
+
+#### Price Feed Consumer
+
+1. Deploy the contract
+
+```
+ape run scripts/deploy_price_feed_consumer.py --network ethereum:rinkeby:alchemy
+```
+
+2. Read it
+
+```
+ape run scripts/read_price_feed.py --network ethereum:rinkeby:alchemy
+```
+
+
+
+#### VRF Consumer
+
+1. Create subscription and fund it with LINK.
+
+You can do that with the script, or going to the UI at [vrf.chain.link](https://vrf.chain.link)
+
+```
+ape run scripts/create_subscription.py --network ethereum:rinkeby:alchemy
+```
+
+2. Update your `helper_config.py` with your subscription Id. 
+
+3. Deploy vrf consumer
+
+```
+ape run scripts/deploy_vrf_consumer.py --network ethereum:rinkeby:alchemy
+```
+
+4. [Add your contract/consumer to the VRF UI](https://docs.chain.link/docs/get-a-random-number/#create-and-fund-a-subscription)
+
+
+5. Request a random number and wait for a response
+
+
+```
+ape run scripts/request_and_read_randomness.py --network ethereum:rinkeby:alchemy
+```
+
+#### Keeper Consumer
+
+1. Deploy the contract
+
+```
+ape run scripts/deploy_keepers_consumer.py --network ethereum:rinkeby:alchemy
+```
+
+2. Register your upkeep on the Keepers UI
+
+You can go to [keepers.chain.link](https://keepers.chain.link/new-custom-logic)
+
+3. Watch for your counter to automatically start going up!
+
+After a delay, run:
+
+```
+ape run scripts/read_counter.py --network ethereum:rinkeby:alchemy
+```
+
+And it should be updated!
+
+
+
 
 # Miscellaneous
 

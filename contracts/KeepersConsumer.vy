@@ -13,7 +13,7 @@ def __init__(update_interval: uint256):
 
 @external
 @view 
-def checkUpkeep(checkData: Bytes[1]) -> (bool, Bytes[1]):
+def checkUpkeep(checkData: Bytes[32]) -> (bool, Bytes[32]):
     upkeep_needed: bool = (block.timestamp - self.last_time_stamp) > INTERVAL
     return(upkeep_needed, b"\x00")
     
