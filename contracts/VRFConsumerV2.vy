@@ -44,7 +44,5 @@ def fulfillRandomWords(request_id: uint256, _random_words: DynArray[uint256, MAX
 @external
 def rawFulfillRandomWords(requestId: uint256, randomWords: DynArray[uint256, MAX_ARRAY_SIZE]):
     assert msg.sender == self.vrf_coordinator.address, "Only coordinator can fulfill!"
-    myBytes: Bytes[4] = b"\x00"
-    myString: String[4] = convert(myBytes, String[4])
     self.fulfillRandomWords(requestId, randomWords)
 
