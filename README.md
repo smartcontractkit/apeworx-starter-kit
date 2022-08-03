@@ -16,7 +16,10 @@ It shows how to use the these frameworks and languages as well as the following 
  - [Chainlink VRF](https://docs.chain.link/docs/chainlink-vrf)
  - [Chainlink Keepers](https://docs.chain.link/docs/chainlink-keepers/introduction/)
 
+# Table of Contents
+
 - [Apeworx (Vyper) Starter Kit](#apeworx-vyper-starter-kit)
+- [Table of Contents](#table-of-contents)
 - [Getting Started](#getting-started)
   - [Requirements](#requirements)
   - [Quickstart](#quickstart)
