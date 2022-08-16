@@ -155,7 +155,7 @@ And then, re-import your private key from anvil by following [the importing an a
 > Note: This will only work since the chain Id is `31337` for anvil! For working with non-local networks, please see [Deploy to a mainnet or testnet](#deploy-to-a-main-or-test-network)
 
 ```
-ape run scripts/deploy_price_consumer.py --network http://127.0.0.1:8545
+ape run scripts/deploy_price_feed_consumer.py --network http://127.0.0.1:8545
 ```
 
 You'll be prompted for your password. 
