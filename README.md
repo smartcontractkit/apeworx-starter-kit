@@ -69,8 +69,11 @@ git clone https://github.com/smartcontractkit/apeworx-starter-kit
 cd apeworx-starter-kit
 ape plugins install alchemy vyper
 ```
-
-2. You're ready to go!
+2. Install Foundry network provider plugin for Ape.
+```
+pip install ape-foundry
+```
+3. You're ready to go!
 
 
 Run tests:
