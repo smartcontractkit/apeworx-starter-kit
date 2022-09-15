@@ -1,3 +1,5 @@
+*Note: This repo has been recently updated to use Goerli.*
+
 # Apeworx (Vyper) Starter Kit
 
 <br/>
@@ -184,7 +186,7 @@ If you're using a network not covered in `helper_config.py` be sure to add it.
 4. Run your script!
 
 ```
-ape run scripts/deploy_price_feed_consumer.py --network ethereum:rinkeby:alchemy
+ape run scripts/deploy_price_feed_consumer.py --network ethereum:goerli:alchemy
 ```
 
 ### Interacting with Contracts
@@ -192,7 +194,7 @@ ape run scripts/deploy_price_feed_consumer.py --network ethereum:rinkeby:alchemy
 To interact with contracts, we recommend using the console.
 
 ```
-ape console --network ethereum:rinkeby:alchemy
+ape console --network ethereum:goerli:alchemy
 ```
 
 Or, you can follow along and run the scripts to see the end-to-end functionaltiy.
@@ -202,13 +204,13 @@ Or, you can follow along and run the scripts to see the end-to-end functionaltiy
 1. Deploy the contract
 
 ```
-ape run scripts/deploy_price_feed_consumer.py --network ethereum:rinkeby:alchemy
+ape run scripts/deploy_price_feed_consumer.py --network ethereum:goerli:alchemy
 ```
 
 2. Read it
 
 ```
-ape run scripts/read_price_feed.py --network ethereum:rinkeby:alchemy
+ape run scripts/read_price_feed.py --network ethereum:goerli:alchemy
 ```
 
 
@@ -220,7 +222,7 @@ ape run scripts/read_price_feed.py --network ethereum:rinkeby:alchemy
 You can do that with the script, or going to the UI at [vrf.chain.link](https://vrf.chain.link)
 
 ```
-ape run scripts/create_subscription.py --network ethereum:rinkeby:alchemy
+ape run scripts/create_subscription.py --network ethereum:goerli:alchemy
 ```
 
 2. Update your `helper_config.py` with your subscription Id. 
@@ -228,7 +230,7 @@ ape run scripts/create_subscription.py --network ethereum:rinkeby:alchemy
 3. Deploy vrf consumer
 
 ```
-ape run scripts/deploy_vrf_consumer.py --network ethereum:rinkeby:alchemy
+ape run scripts/deploy_vrf_consumer.py --network ethereum:goerli:alchemy
 ```
 
 4. [Add your contract/consumer to the VRF UI](https://docs.chain.link/docs/get-a-random-number/#create-and-fund-a-subscription)
@@ -238,7 +240,7 @@ ape run scripts/deploy_vrf_consumer.py --network ethereum:rinkeby:alchemy
 
 
 ```
-ape run scripts/request_and_read_randomness.py --network ethereum:rinkeby:alchemy
+ape run scripts/request_and_read_randomness.py --network ethereum:goerli:alchemy
 ```
 
 #### Keeper Consumer
@@ -246,7 +248,7 @@ ape run scripts/request_and_read_randomness.py --network ethereum:rinkeby:alchem
 1. Deploy the contract
 
 ```
-ape run scripts/deploy_keepers_consumer.py --network ethereum:rinkeby:alchemy
+ape run scripts/deploy_keepers_consumer.py --network ethereum:goerli:alchemy
 ```
 
 2. Register your upkeep on the Keepers UI
@@ -258,7 +260,7 @@ You can go to [keepers.chain.link](https://keepers.chain.link/new-custom-logic)
 After a delay, run:
 
 ```
-ape run scripts/read_counter.py --network ethereum:rinkeby:alchemy
+ape run scripts/read_counter.py --network ethereum:goerli:alchemy
 ```
 
 And it should be updated!
