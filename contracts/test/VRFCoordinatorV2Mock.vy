@@ -1,6 +1,8 @@
 # SPDX-License-Identifier: MIT
 # @version ^0.3.4
 
+MAX_ARRAY_SIZE: constant(uint256) = 10
+
 BASE_FEE: immutable(uint96)
 GAS_PRICE_LINK: immutable(uint96)
 
@@ -41,20 +43,20 @@ def fulfillRandomWords(requestId: uint256, consumer: address):
         consumer (address): The consumer address to 
     """    
     # Default to 77 as a mocking example
-    words: uint256[1] = [77]
+    words: DynArray[uint256, MAX_ARRAY_SIZE] = [77]
     self.fulfillRandomWordsWithOverride(requestId, consumer, words)
 
 
 @internal
-def fulfillRandomWordsWithOverride(requestId: uint256, consumer: address, words: uint256[1]):
+def fulfillRandomWordsWithOverride(requestId: uint256, consumer: address, words: DynArray[uint256, MAX_ARRAY_SIZE]):
     """Returns an array of random numbers. In this mock contract, we ignore the requestId and consumer. 
 
     Args:
         requestId (uint256): The request Id number
         consumer (address): The consumer address to 
-        words (uint256[1]): The array of random numbers, we are defaulting to 1 for vyper
+        words (DynArray[uint256, MAX_ARRAY_SIZE]): The array of random numbers, we are defaulting to MAX_ARRAY_SIZE for vyper
     """    
-    call_data: Bytes[3236] = _abi_encode(requestId, words, method_id=method_id("rawFulfillRandomWords(uint256,uint256[1])"))
+    call_data: Bytes[3236] = _abi_encode(requestId, words, method_id=method_id("rawFulfillRandomWords(uint256,uint256[])"))
     response: Bytes[32] = raw_call(consumer, call_data, max_outsize=32)
     log RandomWordsFulfilled(requestId, requestId, 0, True)
 
