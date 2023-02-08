@@ -12,9 +12,9 @@ network_config = {
             "update_interval": 60,
             "fund_amount": 5_000000000000000000,
         },
-        "goerli": {
-            "subscription_id": 9757,  # Add your own subscription Id here!
-            "key_hash": "0x79d3d8832d904592c0bf9818b621522c988bb8b0c05cdc3b15aea1b6e8db0c15",
+        "sepolia": {
+            "subscription_id": 777,  # Add your own subscription Id here!
+            "key_hash": "0x474e34a077df58807dbe9c96d3c009b23b3c6d0cce433e59bbf5b34f823bc56c",
             "update_interval": 60,
             "fund_amount": 5_000000000000000000,
         },
