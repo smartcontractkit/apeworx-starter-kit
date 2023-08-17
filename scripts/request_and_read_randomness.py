@@ -8,7 +8,7 @@ def request_and_read_randomness():
     ecosystem = networks.active_provider.network.ecosystem.name
     chain_name = networks.active_provider.network.name
 
-    vrf_consumer = project.VRConsumerV2.deployments[-1]
+    vrf_consumer = project.VRFConsumerV2.deployments[-1]
     request_tx = vrf_consumer.request_random_words(sender=account)
 
     print("Request sent! Let's wait for a response...")
